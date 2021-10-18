@@ -1,0 +1,14 @@
+const express = require("express");
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.set("view engine", "hbs");
+
+app.get("/", (req, res) => {
+  res.render("editor");
+});
+
+app.listen(port, () => {
+  console.log(`Listening on port ${port} http://localhost:${port}`);
+});
