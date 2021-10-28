@@ -1,12 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editor</title>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <style type="text/css" media="screen">
+        #editorHolder {
+            margin: 2rem;
+        }
+
+        #editor {
+
+            position: relative;
+            height: 40vh;
+            top: 0;
+            right: 0;
+
+            left: 0;
+        }
+
+        #stdin {
+            margin: 2rem;
+            position: relative;
+            height: 10vh;
+            top: 0;
+            right: 0;
+
+            left: 0;
+        }
+
+        #stdout {
+            margin: 2rem;
+            position: relative;
+            height: 10vh;
+            top: 0;
+            right: 0;
+
+            left: 0;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div id="holder">
+        <div id="editorHolder">
+
+            <h3>Editor</h3>
+            <form id="prog_lang">
+                <label for="lang">Choose a car:</label>
+                <select name="lang" id="lang">
+                    <option value="javascript">JavaScript</option>
+                    <option value="java">Java</option>
+                </select>
+                <br><br>
+                <button type="submit" value="Submit" onclick="reloadEditor();">Submit</button>
+            </form>
+            <div id="editor"></div>
+            <button type="submit" value="Submit" onclick="runCode();">Run</button>
+        </div>
+
+
+        <h4>Input</h4>
+        <div id="stdin"></div>
+
+        <h4>Output</h4>
+        <div id="stdout"></div>
+
+
+
+    </div>
+
+
+    <script src="/src-min/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/src-min/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/editor_initialize.js"></script>
+
 </body>
+
 </html>
