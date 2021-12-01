@@ -1,0 +1,84 @@
+#holder {
+  top: 4rem;
+  bottom: 0;
+}
+#program_select {
+  background-color: aqua;
+  position: absolute;
+  width: 7%;
+  left: 0;
+  bottom: 0;
+  top: 7.5rem;
+  display: inline;
+  text-align: center;
+}
+.program_type {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-color: brown;
+  border-style: inset;
+}
+#editor_panel {
+  position: absolute;
+  left: 7%;
+  width: 50%;
+  bottom: 0;
+  top: 5rem;
+  background-color: rgb(6, 78, 141);
+}
+#header_title {
+  background-color: white;
+  border-width: 4px;
+  border-color: brown;
+  margin: 0.5rem;
+}
+#header_title h2 {
+  display: inline;
+}
+#run_btn {
+  position: absolute;
+  display: inline;
+  margin: 0.2rem;
+  right: 2rem;
+}
+#code_editor {
+  position: absolute;
+  bottom: 0;
+  top: 2.5rem;
+  width: 100%;
+  color: beige;
+}
+#input_panel {
+  position: absolute;
+  right: 0;
+  width: 40%;
+  height: 40%;
+  background-color: darkgray;
+}
+#input_panel #input_title {
+  margin: 1rem;
+  background-color: white;
+}
+#stdin {
+  position: absolute;
+  width: 100%;
+  top: 3.5rem;
+  height: 100%;
+}
+#output_panel {
+  position: absolute;
+  height: 20%;
+  right: 0;
+  bottom: 13%;
+  width: 40%;
+  background-color: darkgray;
+}
+#output_panel #output_title {
+  margin: 0.51rem;
+  background-color: white;
+}
+#stdout {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
