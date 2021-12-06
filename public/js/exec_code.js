@@ -1,24 +1,29 @@
-async function executecode() {
-  var editor = ace.edit("code_editor");
-  var stdin = ace.edit("stdin");
-  var prog_lang = document.getElementById("editor_panel").className;
-  console.log(JSON.stringify("print('dasdas')"));
+var form = document.getElementById("form");
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  console.log("wewr", document.getElementById("run_btn").className);
 
-  var url = "https://api.jdoodle.com/v1/credit-spent";
-  var program = {
-    clientId: "a87a4b386a0a989304753a4f85369c8e",
-    clientSecret:
-      "2a7c69ce979a19c5c99875abb9e869fef97dff3f8cbd3bff767abc8bd6aa7e6b",
-  };
-  fetch(url, {
-    method: "post",
-    mode: "no-cors",
+  var prog_lang = document.getElementById("editor_panel").className;
+
+  var editor_text = ace.edit("code_editor").getValue();
+  var stdin = ace.edit("stdin").getValue();
+  var program = { script: editor_text, stdin: stdin };
+  fetch("/code_compiler/exec/" + prog_lang, {
+    method: "POST",
     headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Credentials": true,
+      "Content-type": "application/json",
     },
+    body: JSON.stringify(program),
   })
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((response) => {
+      return response.json();
+    })
+    .then((response) => {
+      printOutput(response);
+    });
+});
+function printOutput(res) {
+  var output = ace.edit("stdout");
+  console.log(res);
+  output.setValue(res.output);
 }

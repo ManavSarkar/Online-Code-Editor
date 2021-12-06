@@ -14,6 +14,8 @@ editor.setOptions({
   fontSize: "12pt",
   enableBasicAutocompletion: true,
   enableLiveAutocompletion: true,
+
+  enableSnippets: true,
 });
 var stdin = ace.edit("stdin");
 stdin.setTheme("ace/theme/monokai");
@@ -34,6 +36,7 @@ stdout.setOptions({
   highlightActiveLine: true,
   cursorStyle: "slim",
   fontSize: "16pt",
+  readOnly: true,
 });
 
 console.log();
