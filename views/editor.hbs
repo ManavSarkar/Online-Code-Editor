@@ -17,6 +17,15 @@
 
 <body>
     <h2>My Code Compiler</h2>
+    <form action="/code_compiler/" method="get">
+        <label for="programming_language">Language</label>
+        <select type="submit" name="programming_language" id="programming_language">
+            <option value="java">Java</option>
+            <option value="c">C</option>
+            <option value="cpp">CPP</option>
+            <option value="python3">Python 3</option>
+        </select><input type="submit" value="Submit">
+    </form>
     <form id="form" method="post">
         <div id="program_select">
             <div class="program_type">C</div>
@@ -26,9 +35,7 @@
         <div id="editor_panel" class="{{lang}}">
             <div id="header_title">
                 <h2>Code Editor</h2>
-                {{!-- <div class="spinner-border" id="compile_loading" role="status">
-                    <span class="visually-hidden">Compiling...</span>
-                </div> --}}
+
 
                 <button id="run_btn" class="idle" type="submit">Run</button>
 

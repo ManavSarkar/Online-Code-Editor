@@ -1,6 +1,8 @@
 var prog_lang = document.getElementById("editor_panel").className;
 if (prog_lang === "c" || prog_lang === "cpp") {
   prog_lang = "c_cpp";
+} else if (prog_lang === "python3") {
+  prog_lang = "python";
 }
 var editor = ace.edit("code_editor");
 editor.setTheme("ace/theme/monokai");

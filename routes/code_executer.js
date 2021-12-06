@@ -6,6 +6,10 @@ var request = require("request");
 // create application/json parser
 var jsonParser = bodyParser.json();
 
+router.get("/", (req, res) => {
+  res.redirect("/code_compiler/" + req.query.programming_language);
+});
+
 router.get("/:lang", (req, res) => {
   res.render("editor", { lang: req.params.lang });
 });
