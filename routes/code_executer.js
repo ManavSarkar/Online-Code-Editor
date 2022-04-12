@@ -32,6 +32,9 @@ router.post("/exec/:lang", jsonParser, (req, res) => {
     },
     function (error, response, body) {
       result = body;
+      if (error) {
+        console.log(error);
+      }
       res.json(result);
     }
   );
