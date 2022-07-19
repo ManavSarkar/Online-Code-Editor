@@ -10,7 +10,9 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.static("public"));
 app.set("view engine", "hbs");
-
+hbs.registerHelper("ifEquals", function (arg1, arg2, options) {
+  return arg1 == arg2 ? options.fn(this) : options.inverse(this);
+});
 app.use("/code_compiler", require("./routes/code_executer"));
 
 app.get("/", (req, res) => {

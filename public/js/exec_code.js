@@ -1,7 +1,9 @@
 var form = document.getElementById("form");
+
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-
+  $("#loader").show();
+  $("#idle").hide();
   var prog_lang = document.getElementById("editor_panel").className;
 
   var editor_text = ace.edit("code_editor").getValue();
@@ -26,4 +28,6 @@ function printOutput(res) {
   var output = ace.edit("stdout");
   console.log(res);
   output.setValue(res.output);
+  $("#loader").hide();
+  $("#idle").show();
 }

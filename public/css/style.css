@@ -4,7 +4,10 @@
 }
 #languageSelector {
   width: 100%;
-  background-color: aqua;
+  padding: 8px;
+  background-color: lightgrey;
+  display: flex;
+  justify-content: space-between;
 }
 #program_select {
   background-color: aqua;

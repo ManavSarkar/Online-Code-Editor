@@ -4,6 +4,8 @@ if (prog_lang === "c" || prog_lang === "cpp") {
 } else if (prog_lang === "python3") {
   prog_lang = "python";
 }
+$("#loader").hide();
+$("#idle").show();
 var editor = ace.edit("code_editor");
 editor.setTheme("ace/theme/monokai");
 editor.session.setMode("ace/mode/" + prog_lang);
